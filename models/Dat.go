@@ -4,7 +4,8 @@ import (
 	"time"
 )
 
-type Tmp struct {
+type Dat struct {
 	Temperature float32
+	Humidity    float32
 	Timestamp   time.Time
 }

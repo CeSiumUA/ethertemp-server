@@ -29,13 +29,14 @@ func InitializeMongo() error {
 	return err
 }
 
-func AddTemperature(temperature float32) {
+func AddData(temperature, humidity float32) {
 	if tempsCollection == nil {
 		tempsCollection = mongoClient.Database("ethtemp").Collection("temperatures")
 	}
 
-	model := models.Tmp{
+	model := models.Dat{
 		Temperature: temperature,
+		Humidity:    humidity,
 		Timestamp:   time.Now(),
 	}
 
